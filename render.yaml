@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: alignai-api
+    runtime: node
+    plan: free
+    rootDir: Backend
+    buildCommand: cd .. && npm ci --omit=dev
+    startCommand: node src/server.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: 22.12.0
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: FRONTEND_ORIGINS
+        sync: false
+      - key: GOOGLE_GENAI_API_KEY
+        sync: false

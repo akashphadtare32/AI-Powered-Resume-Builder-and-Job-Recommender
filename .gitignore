@@ -1,0 +1,11 @@
+node_modules/
+Frontend/node_modules/
+Frontend/dist/
+.vscode/
+Backend/src/.env
+Backend/.env
+.env
+.env.*
+!.env.example
+npm-debug.log*
+coverage/
